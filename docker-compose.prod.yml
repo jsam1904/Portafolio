@@ -1,0 +1,13 @@
+name: portafolio-prod
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+      args:
+        VITE_GITHUB_USERNAME: ${VITE_GITHUB_USERNAME:-jsam1904}
+        VITE_GITHUB_API_URL: ${VITE_GITHUB_API_URL:-https://api.github.com}
+    ports:
+      - "80:80"
+    restart: unless-stopped

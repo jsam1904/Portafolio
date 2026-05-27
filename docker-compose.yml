@@ -1,0 +1,22 @@
+name: portafolio-dev
+
+services:
+  app:
+    build:
+      context: .
+      target: development
+    ports:
+      - "5173:5173"
+    volumes:
+      # Monta el código fuente para hot-reload en tiempo real
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      # Evita que node_modules del host sobreescriba el del contenedor
+      - /app/node_modules
+    environment:
+      - VITE_GITHUB_USERNAME=${VITE_GITHUB_USERNAME:-jsam1904}
+      - VITE_GITHUB_API_URL=${VITE_GITHUB_API_URL:-https://api.github.com}
+    env_file:
+      - path: .env
+        required: false

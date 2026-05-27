@@ -1,0 +1,229 @@
+.pageHeader {
+  padding: 3.5rem 0 2rem;
+}
+
+.pageTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+}
+
+.pageLayout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+  padding-bottom: 5rem;
+}
+
+/* ── Bio section ── */
+.bioSection {
+  min-width: 0;
+}
+
+.bioCard {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.avatarWrapper {
+  flex-shrink: 0;
+}
+
+.avatarPlaceholder {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-xl);
+  background: var(--color-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border-light);
+}
+
+.avatarInitials {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.bioContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.bioName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.bioRole {
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  color: var(--color-accent-hover);
+  margin-bottom: 0.4rem;
+}
+
+.bioLocation {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+  margin-bottom: 1.25rem;
+}
+
+.bioText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.bioText p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* Contact */
+.contactSection {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.contactLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: sticky;
+  top: calc(var(--navbar-height) + 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--color-border-light);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+}
+
+.timelineYear {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--color-accent-hover);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.timelineTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.timelineInstitution {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.timelineDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-subtle);
+  line-height: 1.55;
+}
+
+/* Skills */
+.skillsSection {
+  /* inherits from sidebar */
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .pageLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 580px) {
+  .bioCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
